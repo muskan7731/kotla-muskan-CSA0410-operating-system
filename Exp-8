@@ -1,0 +1,64 @@
+#include<stdio.h>
+
+int main()
+{
+    int n,i,remain,time=0,quantum;
+    int bt[10],rt[10];
+    float wt=0,tat=0;
+
+    printf("Enter number of processes: ");
+    scanf("%d",&n);
+
+    remain=n;
+
+    for(i=0;i<n;i++)
+    {
+        printf("Burst Time P%d: ",i+1);
+        scanf("%d",&bt[i]);
+        rt[i]=bt[i];
+    }
+
+    printf("Enter Time Quantum: ");
+    scanf("%d",&quantum);
+
+    i=0;
+
+    while(remain!=0)
+    {
+        if(rt[i]<=quantum && rt[i]>0)
+        {
+            time+=rt[i];
+            rt[i]=0;
+            remain--;
+
+            wt+=time-bt[i];
+            tat+=time;
+        }
+        else if(rt[i]>0)
+        {
+            rt[i]-=quantum;
+            time+=quantum;
+        }
+
+        if(i==n-1)
+            i=0;
+        else
+            i++;
+    }
+
+    printf("\nAverage Waiting Time = %.2f",wt/n);
+    printf("\nAverage Turnaround Time = %.2f\n",tat/n);
+
+    return 0;
+}
+output 
+Enter number of processes: 3
+
+Burst Time P1: 10
+Burst Time P2: 5
+Burst Time P3: 8
+
+Enter Time Quantum: 2
+
+Average Waiting Time = 10.33
+Average Turnaround Time = 18.00
