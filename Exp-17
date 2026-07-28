@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main()
+{
+    int allocation[3]={1,2,2};
+    int maximum[3]={3,2,2};
+    int available=2;
+    int need[3];
+    int i;
+
+    printf("Process\tAllocation\tMaximum\tNeed\n");
+
+    for(i=0;i<3;i++)
+    {
+        need[i]=maximum[i]-allocation[i];
+
+        printf("P%d\t%d\t\t%d\t%d\n",
+        i+1,
+        allocation[i],
+        maximum[i],
+        need[i]);
+    }
+
+    printf("\nAvailable Resources = %d\n",available);
+
+    if(available>=need[0])
+        printf("\nSystem is in Safe State.\n");
+    else
+        printf("\nSystem is in Unsafe State.\n");
+
+    return 0;
+}
