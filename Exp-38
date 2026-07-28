@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int req[] = {98,183,37,122,14,124,65,67};
+    int n = 8, i;
+
+    printf("SCAN Disk Scheduling Order\n\n");
+
+    for(i = 0; i < n; i++)
+        printf("%d ", req[i]);
+
+    printf("\n");
+
+    return 0;
+}
+OUTPUT
+SCAN Disk Scheduling Order
+
+98 183 37 122 14 124 65 67
