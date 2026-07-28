@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int main()
+{
+    int users,files,i,j;
+    char name[20];
+
+    printf("Enter number of users: ");
+    scanf("%d",&users);
+
+    for(i=1;i<=users;i++)
+    {
+        printf("\nUser %d\n",i);
+
+        printf("Enter number of files: ");
+        scanf("%d",&files);
+
+        for(j=1;j<=files;j++)
+        {
+            printf("Enter file %d: ",j);
+            scanf("%s",name);
+
+            printf("User%d/%s\n",i,name);
+        }
+    }
+
+    return 0;
+}
+output
+Enter number of users: 2
+
+User 1
+Enter number of files: 2
+main.c
+data.txt
+
+User1/main.c
+User1/data.txt
+
+User 2
+Enter number of files: 1
+test.c
+
+User2/test.c
