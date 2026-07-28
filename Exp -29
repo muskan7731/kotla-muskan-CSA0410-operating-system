@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Producer Produces Item\n");
+    printf("Consumer Consumes Item\n");
+
+    return 0;
+}
+OUTPUT
+Producer Produces Item
+Consumer Consumes Item
