@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int data = 10;
+
+void reader()
+{
+    printf("Reader reads data = %d\n", data);
+}
+
+void writer()
+{
+    data = data + 5;
+    printf("Writer updates data = %d\n", data);
+}
+
+int main()
+{
+    reader();
+    writer();
+    reader();
+
+    return 0;
+}
+OUTPUT
+Reader reads data = 10
+Writer updates data = 15
+Reader reads data = 15
