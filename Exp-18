@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int mutex = 1, full = 0, empty = 3, x = 0;
+
+void producer()
+{
+    if ((mutex == 1) && (empty != 0))
+    {
+        mutex = 0;
+        full++;
+        empty--;
+        x++;
+        printf("Producer produced item %d\n", x);
+        mutex = 1;
+    }
+    else
+        printf("Buffer is Full!\n");
+}
+
+void consumer()
+{
+    if ((mutex == 1) && (full != 0))
+    {
+        mutex = 0;
+        printf("Consumer consumed item %d\n", x);
+        x--;
+        full--;
+        empty++;
+        mutex = 1;
+    }
+    else
+        printf("Buffer is Empty!\n");
+}
+
+int main()
+{
+    producer();
+    producer();
+    consumer();
+    producer();
+
+    return 0;
+}
