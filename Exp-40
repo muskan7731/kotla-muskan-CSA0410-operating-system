@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Linux File Permissions\n\n");
+
+    printf("Owner : Read Write Execute (rwx)\n");
+    printf("Group : Read Write Execute (rwx)\n");
+    printf("Others: Read Write Execute (rwx)\n");
+
+    printf("\nPermission Example\n");
+
+    printf("755 -> rwxr-xr-x\n");
+    printf("644 -> rw-r--r--\n");
+    printf("777 -> rwxrwxrwx\n");
+
+    return 0;
+}
+OUTPUT
+Linux File Permissions
+
+Owner : Read Write Execute (rwx)
+Group : Read Write Execute (rwx)
+Others: Read Write Execute (rwx)
+
+Permission Example
+
+755 -> rwxr-xr-x
+644 -> rw-r--r--
+777 -> rwxrwxrwx
