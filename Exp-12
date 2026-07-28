@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+#define N 5
+
+int state[N];
+
+void take_fork(int p)
+{
+    if(state[p] == 0)
+    {
+        state[p] = 1;
+        printf("Philosopher %d is Eating\n", p + 1);
+    }
+}
+
+void put_fork(int p)
+{
+    state[p] = 0;
+    printf("Philosopher %d is Thinking\n", p + 1);
+}
+
+int main()
+{
+    int i;
+
+    for(i = 0; i < N; i++)
+        state[i] = 0;
+
+    printf("Dining Philosopher Simulation\n\n");
+
+    for(i = 0; i < N; i++)
+        take_fork(i);
+
+    printf("\n");
+
+    for(i = 0; i < N; i++)
+        put_fork(i);
+
+    return 0;
+}
